@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Car Price Predictor</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        form { display: inline-block; text-align: left; border: 1px solid #ccc; padding: 20px; border-radius: 10px; }
+        input { display: block; margin-bottom: 10px; width: 200px; }
+    </style>
+</head>
+<body>
+    <h2>Car Price Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Age (Years):</label>
+        <input type="number" name="Age" required>
+
+        <label>Mileage (km):</label>
+        <input type="number" name="Mileage" required>
+
+        <label>Power (BHP):</label>
+        <input type="number" name="Power" required>
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+</body>
+</html>
